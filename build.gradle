@@ -1,0 +1,24 @@
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.+'
+
+    providedCompile 'javax:javaee-api:7.0'
+
+    testCompile 'easymock:easymock:2.+'
+    testCompile 'org.jmockit:jmockit:1.+'
+
+    testCompile 'junit:junit:4.+'
+    testRuntime("org.junit.vintage:junit-vintage-engine:4.+")
+
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.+")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.+")
+}
