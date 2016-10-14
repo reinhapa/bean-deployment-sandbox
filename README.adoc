@@ -1,0 +1,16 @@
+= JavaEE prototype and demo beans
+Patrick Reinhart <https://github.com/reinhapa[@reinhapa]>
+:project-full-path: reinhapa/bean-deployment-sandbox
+:github-branch: master
+
+image:https://img.shields.io/badge/license-MIT-blue.svg["MIT License", link="https://github.com/{project-full-path}/blob/{github-branch}/LICENSE"]
+image:https://img.shields.io/badge/Java-8-blue.svg["Supported Versions", link="https://travis-ci.org/{project-full-path}"]
+image:https://img.shields.io/travis/{project-full-path}/{github-branch}.svg["Build Status", link="https://travis-ci.org/{project-full-path}"]
+
+This project contains some prototypes and documentations style bean implementations.
+
+== Contribute
+Contributions are always welcome. Use https://google.github.io/styleguide/javaguide.html[Google code style format] for your changes. 
+
+== License
+This project is licensed under the https://github.com/{project-full-path}/blob/{github-branch}/LICENSE[MIT license]
