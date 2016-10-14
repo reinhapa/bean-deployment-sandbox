@@ -2,11 +2,11 @@ package test;
 
 import java.io.Serializable;
 
-public abstract class CommandEvent<C extends Enum<C>> {
-	private C _command;
-	private Serializable _data;
+public abstract class CommandEvent<C extends Enum<C>, D extends Serializable> {
+	private final C _command;
+	private final D _data;
 
-	public CommandEvent(C command, Serializable data) {
+	public CommandEvent(C command, D data) {
 		_command = command;
 		_data = data;
 	}
@@ -21,7 +21,7 @@ public abstract class CommandEvent<C extends Enum<C>> {
 	/**
 	 * @return the data
 	 */
-	public final Serializable getData() {
+	public final D getData() {
 		return _data;
 	}
 }

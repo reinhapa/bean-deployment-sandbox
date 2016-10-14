@@ -32,15 +32,15 @@ public class TestReplicator {
 		logger.info("got my second event type {}", event.getClass());
 	}
 
-	public void onCommandEvent(@Observes CommandEvent<?> event) {
+	public void onCommandEvent(@Observes CommandEvent<?, ?> event) {
 		logger.info("got command event type {}", event.getClass());
 	}
 
-	public void onCommandMyEvent(@Observes CommandEvent<MyEvent> event) {
+	public void onCommandMyEvent(@Observes CommandEvent<MyEvent, String> event) {
 		logger.info("got command my event type {}", event.getClass());
 	}
 
-	public void onCommandMySecondEvent(@Observes CommandEvent<MySecondEvent> event) {
+	public void onCommandMySecondEvent(@Observes CommandEvent<MySecondEvent, String> event) {
 		logger.info("got command my second event type {}", event.getClass());
 	}
 }

@@ -1,8 +1,7 @@
 package test;
 
-import java.io.Serializable;
-
 import javax.annotation.PostConstruct;
+import javax.ejb.Schedule;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.enterprise.event.Event;
@@ -18,6 +17,8 @@ public class ReiniSingletonBean {
 	@Inject
 	Event<Object> event;
 
+	int loops;
+
 	@PostConstruct
 	public void postConstruct() {
 		logger.info("post constuct");
@@ -26,26 +27,30 @@ public class ReiniSingletonBean {
 
 		event.fire(new MyCommandEvent(MyEvent.RUNNING, "data"));
 		event.fire(new MySecondCommandEvent(MySecondEvent.TWO, "data"));
+	}
 
-		// class MyCommandEvent extends CommandEvent<MyCommandEvent, MyEvent,
-		// Serializable> {
-		//
-		// }
-
+	@Schedule(hour = "*", minute = "*", second = "*/5", persistent = false)
+	public void onTimer() {
+		loops += 50;
+		logger.info("start fire {} events", Integer.valueOf(loops));
+		for (int i = 0; i < loops; i++) {
+			event.fire(new WorkerEvent());
+		}
+		logger.info("end fire events");
 	}
 
 	public String getValue() {
 		return "the value";
 	}
 
-	class MyCommandEvent extends CommandEvent<MyEvent> {
-		public MyCommandEvent(MyEvent command, Serializable data) {
+	class MyCommandEvent extends CommandEvent<MyEvent, String> {
+		public MyCommandEvent(MyEvent command, String data) {
 			super(command, data);
 		}
 	}
 
-	class MySecondCommandEvent extends CommandEvent<MySecondEvent> {
-		public MySecondCommandEvent(MySecondEvent command, Serializable data) {
+	class MySecondCommandEvent extends CommandEvent<MySecondEvent, String> {
+		public MySecondCommandEvent(MySecondEvent command, String data) {
 			super(command, data);
 		}
 	}
