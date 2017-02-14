@@ -22,7 +22,7 @@ public class ThreadExecutorBean {
 	@Resource
 	ManagedExecutorService executorService;
 
-	@Schedule(hour = "*", minute = "*", second = "*/5", persistent = false)
+	@Schedule(hour = "*", minute = "*/2", persistent = false)
 	public void onTimer() {
 		for (int i = 0; i < 1000; i++) {
 			executorService.submit(this::workload);

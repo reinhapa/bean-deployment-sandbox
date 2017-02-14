@@ -16,32 +16,36 @@ import org.slf4j.Logger;
 
 @Stateless
 public class JobOperatorBean {
-  @Inject
-  Logger logger;
+	@Inject
+	Logger logger;
 
-  private JobOperator jobOperator;
+	private JobOperator jobOperator;
 
-  @PostConstruct
-  public void initialize() {
-    jobOperator = BatchRuntime.getJobOperator();
-  }
+	@PostConstruct
+	public void initialize() {
+		jobOperator = BatchRuntime.getJobOperator();
+	}
 
-  public Long start(String jobXMLName, Properties jobParameters) {
-    logger.info("Start batch job: {}", jobXMLName);
-    return jobOperator.start(jobXMLName, jobParameters);
-  }
+	public long start(String jobXMLName, Properties jobParameters) {
+		logger.info("Start batch job: {}", jobXMLName);
+		return jobOperator.start(jobXMLName, jobParameters);
+	}
 
-  public JobExecution getJobExecution(Long executionId) {
-    return jobOperator.getJobExecution(executionId);
-  }
+	public JobExecution getJobExecution(long executionId) {
+		return jobOperator.getJobExecution(executionId);
+	}
 
-  @Schedule(hour = "*", minute = "*/1", persistent = false)
-  public void onTimer() {
-    try {
-      start("batch.xml", new Properties());
-      start("junkedbatch.xml", new Properties());
-    } catch (JobStartException | JobSecurityException e) {
-      logger.error("Unable to start: " + e.getMessage());
-    }
-  }
+	@Schedule(hour = "*", minute = "*/1", persistent = false)
+	public void onTimer() {
+		try {
+			Properties jobParameters = new Properties();
+			jobParameters.setProperty("key1", "value1");
+			jobParameters.setProperty("key2", "value2");
+
+			start("batch.xml", jobParameters);
+			start("junkedbatch.xml", jobParameters);
+		} catch (JobStartException | JobSecurityException e) {
+			logger.error("Unable to start: " + e.getMessage());
+		}
+	}
 }

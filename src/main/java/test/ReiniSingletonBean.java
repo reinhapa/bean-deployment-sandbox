@@ -29,7 +29,7 @@ public class ReiniSingletonBean {
 		event.fire(new MySecondCommandEvent(MySecondEvent.TWO, "data"));
 	}
 
-	@Schedule(hour = "*", minute = "*", second = "*/5", persistent = false)
+	@Schedule(hour = "*", minute = "*/2", persistent = false)
 	public void onTimer() {
 		loops += 50;
 		logger.info("start fire {} events", Integer.valueOf(loops));
