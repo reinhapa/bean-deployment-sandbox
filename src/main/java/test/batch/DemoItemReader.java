@@ -1,9 +1,9 @@
 package test.batch;
 
-import javax.batch.api.chunk.AbstractItemReader;
-import javax.batch.runtime.context.JobContext;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.batch.api.chunk.AbstractItemReader;
+import jakarta.batch.runtime.context.JobContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 import org.slf4j.Logger;
 

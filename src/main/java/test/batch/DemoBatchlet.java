@@ -1,10 +1,10 @@
 package test.batch;
 
-import javax.batch.api.AbstractBatchlet;
-import javax.batch.runtime.BatchStatus;
-import javax.batch.runtime.context.JobContext;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.batch.api.AbstractBatchlet;
+import jakarta.batch.runtime.BatchStatus;
+import jakarta.batch.runtime.context.JobContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 import org.slf4j.Logger;
 

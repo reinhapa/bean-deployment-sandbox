@@ -1,21 +1,27 @@
-apply plugin: 'war'
-apply plugin: 'eclipse-wtp'
+plugins {
+    id 'war'
+    id 'eclipse-wtp'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.slf4j:slf4j-api:2.0.+'
+    implementation 'org.slf4j:slf4j-api:2.0.17'
 
     providedCompile 'jakarta.platform:jakarta.jakartaee-api:11.0.0'
 
-    testImplementation 'easymock:easymock:2.+'
-    testImplementation 'org.jmockit:jmockit:1.+'
+    testImplementation 'easymock:easymock:2.0'
+    testImplementation 'org.jmockit:jmockit:1.50'
 
-    testImplementation 'junit:junit:4.+'
-    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:6.+'
+    testImplementation 'junit:junit:4.13.2'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:6.0.0'
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:6.+'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:6.+'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:6.0.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:6.0.0'
 }

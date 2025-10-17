@@ -2,10 +2,10 @@ package test.batch;
 
 import java.util.List;
 
-import javax.batch.api.chunk.AbstractItemWriter;
-import javax.batch.runtime.context.JobContext;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.batch.api.chunk.AbstractItemWriter;
+import jakarta.batch.runtime.context.JobContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 import org.slf4j.Logger;
 

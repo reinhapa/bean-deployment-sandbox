@@ -8,10 +8,10 @@ package test;
 
 import java.security.SecureRandom;
 
-import javax.ejb.Asynchronous;
-import javax.ejb.Stateless;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
+import jakarta.ejb.Asynchronous;
+import jakarta.ejb.Stateless;
+import jakarta.enterprise.event.Observes;
+import jakarta.inject.Inject;
 
 import org.slf4j.Logger;
 

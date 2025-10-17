@@ -6,11 +6,11 @@
 
 package test;
 
-import javax.annotation.Resource;
-import javax.ejb.Schedule;
-import javax.ejb.Stateless;
-import javax.enterprise.concurrent.ManagedExecutorService;
-import javax.inject.Inject;
+import jakarta.annotation.Resource;
+import jakarta.ejb.Schedule;
+import jakarta.ejb.Stateless;
+import jakarta.enterprise.concurrent.ManagedExecutorService;
+import jakarta.inject.Inject;
 
 import org.slf4j.Logger;
 

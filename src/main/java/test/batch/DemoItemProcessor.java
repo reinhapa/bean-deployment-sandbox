@@ -1,8 +1,8 @@
 package test.batch;
 
-import javax.batch.api.chunk.ItemProcessor;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.batch.api.chunk.ItemProcessor;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 import org.slf4j.Logger;
 

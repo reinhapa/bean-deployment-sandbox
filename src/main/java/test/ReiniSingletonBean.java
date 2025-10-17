@@ -1,11 +1,11 @@
 package test;
 
-import javax.annotation.PostConstruct;
-import javax.ejb.Schedule;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
-import javax.enterprise.event.Event;
-import javax.inject.Inject;
+import jakarta.annotation.PostConstruct;
+import jakarta.ejb.Schedule;
+import jakarta.ejb.Singleton;
+import jakarta.ejb.Startup;
+import jakarta.enterprise.event.Event;
+import jakarta.inject.Inject;
 
 import org.slf4j.Logger;
 

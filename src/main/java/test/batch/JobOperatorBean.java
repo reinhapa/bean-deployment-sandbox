@@ -2,15 +2,15 @@ package test.batch;
 
 import java.util.Properties;
 
-import javax.annotation.PostConstruct;
-import javax.batch.operations.JobOperator;
-import javax.batch.operations.JobSecurityException;
-import javax.batch.operations.JobStartException;
-import javax.batch.runtime.BatchRuntime;
-import javax.batch.runtime.JobExecution;
-import javax.ejb.Schedule;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
+import jakarta.annotation.PostConstruct;
+import jakarta.batch.operations.JobOperator;
+import jakarta.batch.operations.JobSecurityException;
+import jakarta.batch.operations.JobStartException;
+import jakarta.batch.runtime.BatchRuntime;
+import jakarta.batch.runtime.JobExecution;
+import jakarta.ejb.Schedule;
+import jakarta.ejb.Stateless;
+import jakarta.inject.Inject;
 
 import org.slf4j.Logger;
 
